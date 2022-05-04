@@ -16,7 +16,7 @@ vagrant ––version
 
 3. Vagrant on CentOS
 sudo mkdir -p /vagrant/{master, worker1,worker2}
-cd /vagran/{master, worker1,worker2}
+cd /vagrant/{master, worker1,worker2}
 touch Vagrantfile
 vagrant up
 
