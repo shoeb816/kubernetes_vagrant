@@ -24,3 +24,6 @@ Here there are 3 vagrant file which can be use to create 1 master and 2 worker n
 
 To create thsoe VMs need to rename these file names to Vagrantfile only in vagrant's specific location to up the servers.
 
+Change the IP Address as per your own network enviorment.
+Set root password to login instead of vagrant user from other computer (non-secure) or use ssh-key.
+
