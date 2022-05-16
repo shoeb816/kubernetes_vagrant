@@ -2,7 +2,14 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "centos/7"
   #config.vm.box = "ubuntu/bionic64"
-  config.vm.hostname = "worker01.kpp.com"
+  config.vm.hostname = "worker02.kpp.com"
+  
+  config.vm.provision "shell", inline: <<-SHELL
+    echo -e "vagrant\nvagrant" | passwd root
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+    sed -in 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+    service ssh restart
+  SHELL
 
   config.vm.network "private_network", ip: "192.168.2.3"
   config.vm.provider "virtualbox" do |vb|
